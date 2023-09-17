@@ -1,9 +1,13 @@
 import Cover from "@/components/cover";
 
-export default function Home() {
+const Home: React.FC = () => {
   return (
-    <main className="flex min-h-screen flex-col w-vw overflow-x-hidden items-center justify-between p-24">
-      <Cover/>
-    </main>
+    <>
+      <div className="flex min-h-screen flex-col w-vw overflow-x-hidden items-center justify-between p-24">
+        <Cover />
+      </div>
+    </>
   )
 }
+
+export default Home;
