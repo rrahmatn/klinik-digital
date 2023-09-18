@@ -54,7 +54,7 @@ const Footer: React.FC = () => {
                             </div>
                         </div>
                     </div>
-                    <div className="w-3/4 h-full flex flex-col justify-center text-sm pl-4 text-left my-auto">
+                    <div className="w-3/4 h-full flex flex-col justify-center text-sm pl-4 pr-6 text-left my-auto">
                         <p>© 2010-2022 GetApp. All Rights</p>
                         <p> GetApp® is a registered trademark of Nubera eBusiness S.L. Nubera eBusiness uses its own and third-party cookies. By using the website you are accepting the use of these cookies. To get more information about our cookies click here.</p>
                     </div>
