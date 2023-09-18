@@ -9,7 +9,7 @@ const Navbar: React.FC = () => {
         <div className="w-2/3 h-full flex flex-row ml-7 items-center">
           <Link href="/">
             <div className="w-fit h-1/2 flex flex-row justify-between px-1 gap-3 mr-5 items-center">
-              <Image src="/img/klinik-digital-logo.svg" alt="Logo Klinik Digital" width={60} height={60} />
+              <Image src="/img/klinik-digital-logo.svg" alt="Logo Klinik Digital" width={40} height={40} />
               <Image src="/img/klinik-digital.svg" alt="Klinik Digital" width={148} height={40} />
             </div>
           </Link>

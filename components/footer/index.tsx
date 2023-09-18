@@ -36,7 +36,7 @@ const Footer: React.FC = () => {
                         <div className="flex flex-col gap-2">
                             <Link href='/'> Join</Link>
                             <Link href='/'> Sign In</Link>
-                            <Link href='/'> Software Categories</Link>
+                            <Link href='/kategori'> Software Categories</Link>
                             <Link href='/'> Resource</Link>
                         </div>
                     </div>
@@ -45,7 +45,7 @@ const Footer: React.FC = () => {
                     <div className="w-1/4 h-full ml-2 flex-row flex items-start">
                         <Image src='img/footer.svg' alt='logo' width={72} height={72} />
                         <div className="flex flex-col w-fit gap-3 h-full px-5 ">
-                            <p className='text-md xl:text-xl'>Klinik Digital Jaya Team</p>
+                            <p className='text-md 2xl:text-xl'>Klinik Digital Jaya Team</p>
                             <div className="flex flex-row gap-3 text-2xl xl:text-3xl">
                                 <AiFillLinkedin />
                                 <AiFillInstagram />

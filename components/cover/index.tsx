@@ -1,4 +1,4 @@
-import Button from '../button';
+import LinkButton from '../link-button';
 import { MdKeyboardDoubleArrowDown } from 'react-icons/md';
 import 'animate.css';
 
@@ -36,10 +36,10 @@ const Cover: React.FC = () => {
                         Dapatkan rekomendasi terbaik dari para ahlinya di <b>Klinik Digital</b>
                     </div>
                     <div className="w-full h-fit flex flex-row items-center gap-24 cursor-pointer animate__animated animate__fadeInLeft animate__slower">
-                        <Button isi={"Cari Solusi Anda"} text="#f9f9f5" warna="#f4a022" />
-                        <div className="w-fit h-fit xl:text-xl text-md animate-bounce gap-4 flex flex-row items-center">
+                        <LinkButton link='/kategori' isi={"Cari Solusi Anda"} text="#f9f9f5" warna="#f4a022" />
+                        <a href='#content1' className="w-fit h-fit xl:text-xl text-md animate-bounce gap-4 flex flex-row items-center">
                             Jelajahi lebih banyak <MdKeyboardDoubleArrowDown />
-                        </div>
+                        </a>
                     </div>
                 </div>
             </div>

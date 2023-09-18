@@ -36,15 +36,14 @@ const Kategori: React.FC = () => {
         <>
             <div className="w-full h-fit pt-[80px] flex flex-col">
                 <Navigator isi="Home  >  Kategori" />
-                <div className="w-1/2 font-bold xl:text-5xl text-4xl text-[#555555] text-left py-5 px-24"> Produk digital terbaik
-                    untuk kemajuan bisnis anda</div>
-                <div className="w-full h-fit px-40 py-5 flex flex-row items-center justify-between">
-                    {content1.map(item => {
+                <div className="w-2/3 2xl:w-1/2 font-bold xl:text-4xl text-xl text-[#555555] text-left py-5 xl:px-24 pl-24 "> Produk digital terbaik untuk kemajuan bisnis anda</div>
+                <div className="w-full h-fit px-auto py-5 flex flex-row items-center justify-around">
+                    {content1.map((item , index)=> {
                         return (
                             <>
-                                <Link href={item.url} className="w-1/4 h-[520px] bg-[#ffffff] flex py-4 transition duration-250 hover:scale-105 overflow-visible flex-col items-center justify-between text-center">
+                                <Link href={item.url} key={index} className="xl:w-1/4 w-1/3 2xl:h-[520px] rounded-sm h-96 bg-[#ffffff] hover:bg-[#F4A022] flex py-4 transition duration-250 hover:scale-105 overflow-visible flex-col items-center justify-between text-center">
                                     <Image src={`img/kategori/content1/${item.gambar}`} className="w-11/12 h-fit transition duration-250 hover:scale-125" alt='gambar' width={420} height={420} />
-                                    <div className="w-fit h-80px xl:text-3xl py-4 text-2xl text-[#1f1717] font-semibold">{item.isi}</div>
+                                    <div  className="w-full text-center xl:h-80px h-fit xl:text-3xl xl:py-4 text-2xl text-[#1f1717] font-semibold">{item.isi}</div>
                                 </Link >
                             </>
                         )
@@ -62,6 +61,8 @@ const Kategori: React.FC = () => {
                     <p className="text-[#1f1717] text-sm">You can choose the right software and services for your business based on </p>
                     <p className="text-[#1f1717] text-sm">1,663,300+ authentic, timely reviews from real users.</p>
                 </div>
+
+                    
             </div>
         </>
     )
