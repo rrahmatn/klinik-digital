@@ -22,7 +22,7 @@ const LinkButton: React.FC<ButtonProps> = ({ warna, text, isi, onClick , classNa
     <>
       <Link
         href={link}
-        className={`${className} w-48 h-11 2xl:w-56 2xl:h-16 2xl:text-xl text-lg md:text-md rounded-xl gap-[10px] px-4 py-2 text-center flex justify-center items-center font-semibold cursor-pointer`}
+        className={`${className} w-48 h-11 2xl:w-56 2xl:h-16 2xl:text-xl text-lg md:text-md rounded-xl  py-2 text-center flex justify-center items-center font-semibold cursor-pointer`}
         style={{ backgroundColor: hover, color: text }}
         onClick={onClick}
         onMouseEnter={(): void => setHovered(true)}

@@ -1,0 +1,8 @@
+.gradient {
+  background: rgb(249, 249, 244);
+  background: linear-gradient(
+    90deg,
+    rgba(249, 249, 244, 1) 50%,
+    rgba(244, 160, 34, 1) 100%
+  );
+}

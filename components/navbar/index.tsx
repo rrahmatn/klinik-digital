@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
       <div className="shadow-md fixed top-0 w-full h-[80px] flex flex-row bg-[#ffffff] items-center justify-between pl-20 pr-10">
         <div className="w-2/3 h-full flex flex-row ml-7 items-center">
           <Link href="/">
-            <div className="w-fit h-1/2 flex flex-row justify-between px-1 gap-3 mr-5 items-center">
+            <div className="w-fit h-1/2 flex flex-row drop-shadow-2xl justify-between px-1 gap-3 mr-5 items-center">
               <Image src="/img/klinik-digital-logo.svg" alt="Logo Klinik Digital" width={40} height={40} />
               <Image src="/img/klinik-digital.svg" alt="Klinik Digital" width={148} height={40} />
             </div>
