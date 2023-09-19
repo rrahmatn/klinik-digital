@@ -4,7 +4,7 @@ import React, { useState } from "react";
 import Link from 'next/link';
 
 interface ButtonProps {
-  warna: string;
+  warna?: any;
   text: string;
   isi: string;
   onClick?: () => void;
@@ -16,7 +16,8 @@ const LinkButton: React.FC<ButtonProps> = ({ warna, text, isi, onClick , classNa
   const [hovered, setHovered] = useState<boolean>(false)
 
   const hover: string = !hovered ? warna : hexToRgba(warna, 90)
-
+  
+  
   return (
     <>
       <Link

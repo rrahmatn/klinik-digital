@@ -15,7 +15,7 @@ const Navbar: React.FC = () => {
           </Link>
           <div className="w-2/3 h-1/2 items-center flex flex-row px-4 font-semibold gap-9 text-[#667080]  font-light">
             <Link className='hover:text-[#363636]' href="/kategori">Solusi Digital</Link>
-            <Link className='hover:text-[#363636]' href="/">Konsultasi</Link>
+            <Link className='hover:text-[#363636]' href="/kategori/konsultasi">Konsultasi</Link>
             <Link className='hover:text-[#363636]' href="/">Tentang Kami</Link>
           </div>
         </div>

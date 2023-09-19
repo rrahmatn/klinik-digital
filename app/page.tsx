@@ -60,11 +60,11 @@ const Home: React.FC = () => {
         <div className="w-full h-fit bg-[#191E37] animate__animated animate__animated flex flex-row items-center justify-between px-10 pb-5" id='content1'>
           <Image src='/img/bg.svg' className="w-1/6 md:w-40 h-fit " alt='bg' width={215} height={683} />
           <div className="w-1/5 md:w-1/2 h-full flex flex-col justify-center  text-left text-[#ffffff] gap-7 ">
-            <h1 className="xl:text-4xl text-3xl font-bold py-5 text-left">Produk Pilihan untuk Mitra Kami</h1>
+            <h1 className="2xl:text-4xl text-3xl font-bold py-5 text-left">Produk Pilihan untuk Mitra Kami</h1>
             {content1.map((item,index) => (
               <div key={index}>
-                <p className="xl:text-xl md:text-md text-md font-semibold py-2">{item.judul}</p>
-                <p className="xl:text-md md:text-xs text-sm">{item.isi}</p>
+                <p className="2xl:text-2xl text-md font-semibold py-2">{item.judul}</p>
+                <p className=" 2xl:text-xl text-xs">{item.isi}</p>
               </div>
             ))}
           </div>
