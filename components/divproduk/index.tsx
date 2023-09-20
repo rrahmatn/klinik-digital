@@ -1,18 +1,15 @@
 import SmallCardProduk from "../small-card-produk";
 
-// Define an interface for your product data
+
 interface iProduct {
   id: number;
   title: string;
   description: string;
   thumbnail: string;
-  // Add other properties as needed
 }
-
-// Function to fetch data from your API
 async function getData(): Promise<iProduct[]> {
   try {
-    const res = await fetch('https://dummyjson.com/products'); // Gantilah URL_API_ANDA dengan URL API Anda
+    const res = await fetch('https://dummyjson.com/products');
 
     if (!res.ok) {
       throw new Error('Gagal mengambil data');
@@ -26,7 +23,6 @@ async function getData(): Promise<iProduct[]> {
   }
 }
 
-// Komponen DivProduk untuk menampilkan data produk
 async function DivProduk() {
   try {
     const data = await getData();

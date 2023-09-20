@@ -14,7 +14,7 @@ const Navigator : React.FC<NavProps> = ({isi , text}) => {
     }
     return(
         <>
-        <div className={`w-full h-fit px-24 py-3 animate__bounceInLeft animate__animated animate__delay-0.5s text-base xl:text-lg`} style={style}>{isi}</div>
+        <div className={`w-full h-fit px-24 py-3 tracking-wide animate__bounceInLeft animate__animated animate__delay-0.5s text-base xl:text-lg`} style={style}>{isi}</div>
         </>
     )
 }

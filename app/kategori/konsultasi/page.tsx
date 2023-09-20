@@ -3,6 +3,14 @@ import Navigator from "@/components/navigator";
 import Point from "@/components/point";
 import WhyKd from "@/components/why-kd";
 import Image from 'next/image';
+import { Metadata } from "next";
+
+
+export const metadata: Metadata = {
+    title: 'Konsultasikan kebutuhan anda kepada kami',
+    description: 'Project Coba Coba by : rrahmatn',
+}
+
 
 interface icontent3 {
     gambar: string;

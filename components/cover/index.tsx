@@ -27,15 +27,15 @@ const Cover: React.FC = () => {
                             <div className="text-[#f4a022] w-fit"> Perlu App </div>
                             <div className="text-[#55555] w-fit"> atau Web? dan </div>
                         </div>
-                        <div className="flex flex-row animate__animated animate__fadeInLeft animate__fast">
+                        <div className="flex flex-row animate__animated animate__fadeInLeft animate__faster">
                             <div className="text-[#f4a022] w-fit pl-1"> Konsultasi </div>
-                            <div className="text-[#55555] w-fit pl-1">  Bisnis Digital ?</div>
+                            <div className="text-[#55555] w-fit pl-1"> Bisnis Digital ?</div>
                         </div>
                     </div>
-                    <div className="w-full h-fit sm:text-sm text-xl md:text-xl xl:text-3xl text-[#55555] animate__animated animate__fadeInLeft animate__slow">
-                        Dapatkan rekomendasi terbaik dari para ahlinya di <b>Klinik Digital</b>
+                    <div className="w-full h-fit sm:text-sm text-xl md:text-xl xl:text-3xl text-[#55555] animate__animated animate__fadeInLeft animate__fast">
+                        Dapatkan rekomendasi terbaik dari para ahlinya di<b>Klinik Digital</b>
                     </div>
-                    <div className="w-full h-fit flex flex-row items-center gap-24 cursor-pointer animate__animated animate__fadeInLeft animate__slower">
+                    <div className="w-full h-fit flex flex-row items-center gap-24 cursor-pointer animate__animated animate__fadeInLeft animate__slow">
                         <LinkButton link='/kategori' isi={"Cari Solusi Anda"} text="#f9f9f5" warna="#f4a022" />
                         <a href='#content1' className="w-fit h-fit xl:text-xl text-md animate-bounce gap-4 flex flex-row items-center">
                             Jelajahi lebih banyak <MdKeyboardDoubleArrowDown />

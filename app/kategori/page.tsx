@@ -1,8 +1,8 @@
 import DivProduk from "@/components/divproduk";
 import Navigator from "@/components/navigator";
-import { Metadata } from "next";
 import Image from 'next/image';
 import Link from 'next/link';
+import { Metadata } from "next";
 
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ const Kategori: React.FC = () => {
         {
             gambar: "2.svg",
             isi: "Aplikasi",
-            url: "/kategori"
+            url: "/kategori/aplikasi"
         },
         {
             gambar: "3.svg",

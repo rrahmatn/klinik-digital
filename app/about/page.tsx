@@ -2,6 +2,13 @@ import Navigator from "@/components/navigator";
 import Image from "next/image";
 import WhyKd from "@/components/why-kd";
 import Point from "@/components/point";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: 'Klinik Digital',
+    description: 'Project Coba Coba by : rrahmatn',
+}
+
 
 interface icontent3 {
     gambar: string;
@@ -29,8 +36,8 @@ const About: React.FC = () => {
                     <Navigator text="#f9f9f4" isi="Home > Tentang Kami" />
                     <div className="w-full h-fit flex flex-row my-10 gap-20 mx-auto">
                         <div className="w-1/6 h-fit flex flex-row ml-40 mr-20 items-start gap-8">
-                            <Image src="img/about/garis.svg" alt="logo" className="animate__animated animate__bounceInLeft animate__delay-1s" width={76} height={424}></Image>
-                            <Image src="img/about/daun.svg" alt="logo" className="animate__animated animate__backInDown animate__delay-2s" width={92} height={150}></Image>
+                            <Image src="img/about/garis.svg" alt="logo" className="animate__animated animate__bounceInLeft animate__delay-0.5s" width={76} height={424}></Image>
+                            <Image src="img/about/daun.svg" alt="logo" className="animate__animated animate__backInDown animate__delay-1s" width={92} height={150}></Image>
                         </div>
                         <div className="w-2/3 h-fit flex flex-col my-auto " >
                             <Image src="img/about/logo.svg" alt="logo" className="animate__animated animate__tada animate__delay-3s" width={800} height={135}></Image>

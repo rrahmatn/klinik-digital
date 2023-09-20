@@ -26,7 +26,7 @@ const WhyKd: React.FC<WhyKdprops> = ({ variant, children, head, ihead , img}) =>
     return (
         <>
             <div className={`w-full h-fit flex  py-8 items-center px-10 ${color}`}>
-                <div className="w-1/2 h-fit flex -mt-20 gap-10 flex-col">
+                <div className="w-1/2 h-fit flex flex-col">
                     {ihead ? <Point isi={head} /> : ''}
                     <div className="w-full flex flex-col text-left text-xl mt-20 gap-10 2xl:text-2xl text-[#555555]">
                         {children}
