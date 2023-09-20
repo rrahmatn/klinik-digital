@@ -33,12 +33,15 @@ const Konsultasi: React.FC = () => {
                     <div className="w-full h-fit flex flex-col justify-center items-center mx-auto my-40">
                         <div className="w-1/2 h-fit py-5 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]text-center animate__zoomIn animate__animated animate__delay-0.5s text-[#f9f9f4] tracking-widest leading-tight font-bold text-3xl 2xl:text-4xl">Buat Janji Mudah & Cepat Untuk Transformasi Bisnis Anda</div>
                         <div className="w-full h-fit flex flex-row items-center my-6 justify-center gap-10">
-                            <LinkButton warna="#F4A022" text="#f9f9f4"  className="animate-pulse" isi="Hubungi Kami" link="/" />
+                            <LinkButton warna="#F4A022" text="#f9f9f4" className="animate-pulse" isi="Hubungi Kami" link="/about" />
                             <LinkButton text="#f9f9f4" warna='#111E2F' className="border-2 animate-pulse border-[#f9f9f4]" isi="Ajukan Penawaran" link="/" />
                         </div>
                     </div>
                 </div>
-                <WhyKd />
+                <WhyKd variant="left" img="/img/konsul/konsul1.svg" ihead={true} head={"Konsultasikan Dengan Ahlinya"}>
+                    <p>Dewasa ini sudah banyak bisnis yang mulai beralih teknologi, dari teknologi Analog ke teknologi digital karena manfaat yang di peroleh lebih baik daripada teknologi terdahulu.</p>
+                    <p>Di klinik digital anda dapat mengunakan rekomendasi dan banyak tools yang dapat membatu optimasi bisnis anda dengan hasil yang signifikan </p>
+                </WhyKd>
                 <div className="w-full h-fit flex pt-8 px-20 flex-col gap-4">
                     <Point isi="Pilih Solusi yang tepat untuk anda" />
                     <div className="w-full h-fit flex flex-row 2xl:px-20 px-12 my-4 py-4">
@@ -50,16 +53,16 @@ const Konsultasi: React.FC = () => {
                 <div className="w-full h-fit flex pt-8 px-20 flex-col gap-4">
                     <Point isi="Cara Kami Membantu anda" />
                     <div className="w-full my-8 px-16 flex flex-row gap-10">
-                    {content1.map((item, index) => {
-                        return (
-                            <>
-                                <div key={index} className={`xl:w-1/3 w-1/3 2xl:h-[520px] pt-8 pb-2 rounded-sm shadow-md h-96 bg-[#ffffff] animate__fadeInLeftBig animate__animated  flex py-4 transition duration-250  flex-col items-center justify-between text-center`}>
-                                    <Image src={`/img/konsul/content3/${item.gambar}`} className={`w-11/12 h-fit transition duration-250 hover:scale-125`} alt='gambar' width={420} height={420} />
-                                    <div className="w-full text-center px-5 xl:h-80px h-fit xl:text-xl xl:py-4 text-md text-[#1f1717]">{item.isi}</div>
-                                </div >
-                            </>
-                        )
-                    })}
+                        {content1.map((item, index) => {
+                            return (
+                                <>
+                                    <div key={index} className={`xl:w-1/3 w-1/3 2xl:h-[520px] pt-8 pb-2 rounded-sm shadow-md h-96 bg-[#ffffff] animate__fadeInLeftBig animate__animated  flex py-4 transition duration-250  flex-col items-center justify-between text-center`}>
+                                        <Image src={`/img/konsul/content3/${item.gambar}`} className={`w-11/12 h-fit transition duration-250 hover:scale-125`} alt='gambar' width={420} height={420} />
+                                        <div className="w-full text-center px-5 xl:h-80px h-fit xl:text-xl xl:py-4 text-md text-[#1f1717]">{item.isi}</div>
+                                    </div >
+                                </>
+                            )
+                        })}
                     </div>
                     <div className="w-full pb-10 h-fit text-center text-xl text-[#555555]">Dewasa ini sudah banyak bisnis yang mulai beralih teknologi, dari teknologi Analog ke teknologi digital </div>
                 </div>

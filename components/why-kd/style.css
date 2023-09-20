@@ -6,3 +6,11 @@
     rgba(244, 160, 34, 1) 100%
   );
 }
+.gradient2 {
+  background: rgb(17, 30, 47);
+  background: linear-gradient(
+    90deg,
+    rgba(17, 30, 47, 1) 0%,
+    rgba(249, 249, 244, 1) 49%
+  );
+}

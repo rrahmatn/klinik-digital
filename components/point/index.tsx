@@ -2,7 +2,7 @@ import Image from "next/image";
 
 
 interface PointProps {
-  isi: string;
+  isi?: string;
   className?: string
 }
 
