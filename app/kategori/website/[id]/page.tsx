@@ -1,6 +1,5 @@
 'use client'
-import Navigator from '@/components/navigator';
-import { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react';
 interface props {
     params: {
         id: string;
@@ -21,10 +20,10 @@ const Page: React.FC<props> = ({ params }) => {
 
     }, [params.id])
 
+
+    // console.log(parseInt(params.id) + 1)
     return (
-        <div className="py-40">
-            <Navigator text='#1f1717' link1='Kategori' link2='Aplikasi' link3={data.title} idLink3={data.id} />
-        </div>
+        <div className="py-40">{data.id}{data.title}</div>
     )
 }
 

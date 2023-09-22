@@ -10,53 +10,54 @@ export const metadata: Metadata = {
     description: 'Project Coba Coba by : rrahmatn',
 }
 
-    interface icontent1 {
-        gambar: string;
-        isi: string;
-        url: string;
-    }
+interface icontent1 {
+    gambar: string;
+    isi: string;
+    url: string;
+    id: number;
+    animated : string;
+}
 
 const Kategori: React.FC = () => {
     const content1: icontent1[] = [
         {
+            id: 1 ,
             gambar: "1.svg",
             isi: "Website",
-            url: "/kategori"
+            url: "/kategori/website",
+            animated: "animate__delay-2s animate__fast"
         },
         {
+            id: 2,
             gambar: "2.svg",
             isi: "Aplikasi",
-            url: "/kategori/aplikasi"
+            url: "/kategori/aplikasi",
+            animated : "animate__delay-1s animate__slow"
         },
         {
+            id: 3,
             gambar: "3.svg",
             isi: "Konsultasi",
-            url: "/kategori/konsultasi"
+            url: "/kategori/konsultasi",
+            animated : "animate__delay-0.5s animate__slower"
         }
     ]
-   
+
     return (
         <>
             <div className="w-full h-fit pt-[80px] flex flex-col">
-                <Navigator text={'#1f1717'}isi="Home  >  Kategori" />
+                <Navigator text={'#1f1717'} link1="Kategori" />
                 <div className="w-2/3 2xl:w-1/2 font-bold xl:text-4xl text-xl text-[#555555] text-left py-5 xl:px-24 pl-24 "> Produk digital terbaik untuk kemajuan bisnis anda</div>
                 <div className="w-full h-fit 2xl:px-auto px-20 py-5 flex flex-row items-center justify-around">
                     {content1.map((item, index) => {
-                         let animated : string = "animate__delay-0.3s"
-
-                         if(index === 0){
-                            animated = "animate__delay-2s animate__fast"
-                         }if(index === 1){
-                            animated = "animate__delay-1s animate__slow"
-                         }if(index === 2){
-                            animated = "animate__delay-0.5s animate__slower"
-                         }
                         return (
                             <>
-                                <Link href={item.url} key={index} className={`xl:w-1/4 w-1/3 2xl:h-[520px] rounded-sm shadow-md h-96 bg-[#ffffff] ${animated} animate__fadeInLeftBig animate__animated  hover:bg-[#F4A022] flex py-4 transition duration-250 hover:scale-105 overflow-visible flex-col items-center justify-between text-center`}>
-                                    <Image src={`img/kategori/content1/${item.gambar}`} className={`w-11/12 h-fit transition duration-250 hover:scale-125`} alt='gambar' width={420} height={420} />
-                                    <div className="w-full text-center xl:h-80px h-fit xl:text-3xl xl:py-4 text-2xl text-[#1f1717] font-semibold">{item.isi}</div>
-                                </Link >
+                                <div key={item.id} className={`xl:w-1/4 w-1/3 2xl:h-[520px] rounded-sm shadow-md h-96 bg-[#ffffff] ${item.animated} animate__fadeInLeftBig animate__animated  hover:bg-[#F4A022] flex py-4 transition duration-250 hover:scale-105 overflow-visible`}>
+                                    <Link href={item.url} key={index} className={`w-full h-full flex flex-col items-center justify-between text-center`}>
+                                        <Image src={`img/kategori/content1/${item.gambar}`} className={`w-11/12 h-fit transition duration-250 hover:scale-125`} alt='gambar' width={420} height={420} />
+                                        <div className="w-full text-center xl:h-80px h-fit xl:text-3xl xl:py-4 text-2xl text-[#1f1717] font-semibold">{item.isi}</div>
+                                    </Link >
+                                </div>
                             </>
                         )
                     })}

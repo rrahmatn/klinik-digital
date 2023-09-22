@@ -1,8 +1,11 @@
+'use client'
+
 import Cover from "@/components/cover";
 import Image from "next/image";
 import 'animate.css';
 import LinkButton from "@/components/link-button";
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md';
+import { useState, useEffect } from 'react';
 
 
 interface icontent1 {
@@ -15,7 +18,20 @@ interface icontent2 {
   isi: string;
 
 }
+interface Content3 {
+  url: string;
+  isi: string;
+}
+
 const Home: React.FC = () => {
+  const [kategori, setKategori] = useState<number>(2)
+  useEffect(() => {
+    const intervalId = setInterval(() => {
+      setKategori((prevKategori) => (prevKategori + 1) % 3);
+    }, 5000);
+
+    return () => clearInterval(intervalId);
+  }, []);
   const content1: icontent1[] = [
     {
       judul: 'Aplikasi Penjunjang Bisnis',
@@ -52,6 +68,20 @@ const Home: React.FC = () => {
       isi: 'You can choose the right software and services for your business based on 1,663,300+ authentic, timely reviews from real users.'
     }
   ]
+  const content3: Content3[] = [
+    {
+      url: "/kategori/website",
+      isi: "Website"
+    },
+    {
+      url: "/kategori/aplikasi",
+      isi: "Aplikasi"
+    },
+    {
+      url: "/kategori/konsultasi",
+      isi: "Konsultasi"
+    }
+  ]
 
   return (
     <>
@@ -61,7 +91,7 @@ const Home: React.FC = () => {
           <Image src='/img/bg.svg' className="w-1/6 md:w-40 h-fit " alt='bg' width={215} height={683} />
           <div className="w-1/5 md:w-1/2 h-full flex flex-col justify-center  text-left text-[#ffffff] gap-7 ">
             <h1 className="2xl:text-4xl text-3xl font-bold py-5 text-left">Produk Pilihan untuk Mitra Kami</h1>
-            {content1.map((item,index) => (
+            {content1.map((item, index) => (
               <div key={index}>
                 <p className="2xl:text-2xl text-md font-semibold py-2">{item.judul}</p>
                 <p className=" 2xl:text-xl text-xs">{item.isi}</p>
@@ -73,7 +103,7 @@ const Home: React.FC = () => {
         <div className="w-full h-fit flex flex-col items-center  justify-center bg-[#ECEDF1] px-16 py-2 pb-3" >
           <h1 className="text-3xl text-[#555555] text-center font-bold my-8">Optimasi KD pada bisnis anda</h1>
           <div className="w-full h-fit flex flex-row justify-around">
-            {content2.map((item,index) => {
+            {content2.map((item, index) => {
               return (
                 <div key={index} className="xl:w-60 w-44 h-fit flex flex-col transition duration-200 hover:scale-105 cursor-pointer items-center mx-auto mb-10 ">
                   <h1 className="w-full h-20  xl:text-xl md:text-md text-[#F4A022] text-center font-semibold px-2">{item.judul}</h1>
@@ -94,9 +124,18 @@ const Home: React.FC = () => {
               <div className="w-full text-md xl:text-xl">Di klinik digital anda dapat mengunakan rekomendasi dan banyak tools yang dapat membatu optimasi bisnis anda dengan hasil yang signifikan </div>
             </div>
             <div className="w-1/2 h-10/12 flex flex-row items-center">
-              <div className="w-1/6 hover:scale-110 h-fit shadow-sm flex items-center justify-center animate-pulse text-5xl font-bold cursor-pointer hover:scale-110"><MdKeyboardDoubleArrowLeft /></div>
-              <div className="w-4/6 h-fit shadow-sm flex flex-col items-center justify-center content-center"><p className='text-xl text-semibold py-3'>Websites</p> <LinkButton link='/kategori' className='animate-pulse' warna="#F4A022" text="#ffffff" isi='Cek Kategori' /></div>
-              <div className="w-1/6 hover:scale-110 h-fit shadow-sm flex items-center justify-center animate-pulse text-5xl font-bold cursor-pointer hover:scale-110"><MdKeyboardDoubleArrowRight /></div>
+              <div className="w-1/6 hover:scale-110 h-fit shadow-sm flex items-center justify-center animate-pulse text-5xl font-bold cursor-pointer hover:scale-110">
+                <MdKeyboardDoubleArrowLeft
+                  onClick={() => {
+                    setKategori((prevKategori) => prevKategori === 0 ? 2 : prevKategori - 1)
+                  }} />
+
+              </div>
+              <div className="w-4/6 h-fit shadow-sm flex flex-col items-center justify-center content-center"><p className='text-xl text-semibold py-3'>{content3[kategori ? kategori : 0].isi}</p> <LinkButton link={`${content3[kategori ? kategori : 0].url}`} className='animate-pulse' warna="#F4A022" text="#ffffff" isi={`Cek ${content3[kategori].isi}`} /></div>
+              <div className="w-1/6 hover:scale-110 h-fit shadow-sm flex items-center justify-center animate-pulse text-5xl font-bold cursor-pointer hover:scale-110">
+                <MdKeyboardDoubleArrowRight
+                  onClick={() => setKategori((prevKategori) => (prevKategori + 1) % 3)} />
+              </div>
             </div>
           </div>
         </div>

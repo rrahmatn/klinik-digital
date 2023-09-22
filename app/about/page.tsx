@@ -33,15 +33,15 @@ const About: React.FC = () => {
         <>
             <div className="w-full h-fiy pt-[80px] flex flex-col">
                 <div className="w-full h-fit flex flex-col bg-gradient-to-br from-[#111E2F] to-[#283340] py-4">
-                    <Navigator text="#f9f9f4" isi="Home > Tentang Kami" />
+                    <Navigator text="#f9f9f4" link1="About" />
                     <div className="w-full h-fit flex flex-row my-10 gap-20 mx-auto">
                         <div className="w-1/6 h-fit flex flex-row ml-40 mr-20 items-start gap-8">
-                            <Image src="img/about/garis.svg" alt="logo" className="animate__animated animate__bounceInLeft animate__delay-0.5s" width={76} height={424}></Image>
-                            <Image src="img/about/daun.svg" alt="logo" className="animate__animated animate__backInDown animate__delay-1s" width={92} height={150}></Image>
+                            <Image src="img/about/garis.svg" alt="logo" className="animate__animated drop-shadow-[0_35px_35px_rgba(0,0,0,0.35)] animate__bounceInLeft animate__delay-0.5s" width={76} height={424}></Image>
+                            <Image src="img/about/daun.svg" alt="logo" className="animate__animated drop-shadow-[0_35px_35px_rgba(0,0,0,0.35)] animate__backInDown animate__delay-1s" width={92} height={150}></Image>
                         </div>
                         <div className="w-2/3 h-fit flex flex-col my-auto " >
-                            <Image src="img/about/logo.svg" alt="logo" className="animate__animated animate__tada animate__delay-3s" width={800} height={135}></Image>
-                            <div className="text-left font-bold text-[#f9f9f4] animate__fadeIn animate__fast animate__animated animate__delay-1s  pr-40 text-3xl">Bersama kami mulai , kembangkan dan optimasi bisnis digital anda </div>
+                            <Image src="img/about/logo.svg" alt="logo" className="animate__animated drop-shadow-[0_35px_35px_rgba(0,0,0,0.35)] animate__tada animate__delay-3s" width={800} height={135}></Image>
+                            <div className="text-left font-bold text-[#f9f9f4] animate__fadeIn drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)] animate__fast animate__animated animate__delay-1s  pr-40 text-3xl">Bersama kami mulai , kembangkan dan optimasi bisnis digital anda </div>
                         </div>
                     </div>
                 </div>
@@ -53,9 +53,9 @@ const About: React.FC = () => {
                     <p>Dewasa ini sudah banyak bisnis yang mulai beralih teknologi, dari teknologi Analog ke teknologi digital karena manfaat yang di peroleh lebih baik daripada teknologi terdahulu.</p>
                     <p>Di klinik digital anda dapat mengunakan rekomendasi dan banyak tools yang dapat membatu optimasi bisnis anda dengan hasil yang signifikan </p>
                 </WhyKd>
-                <div className="w-full h-fit gap-20 px-40 my-4 py-4 pt-8 flex flex-col">
+                <div className="w-full h-fit px-40 my-4 py-4 pt-8 flex flex-col">
                     <Point isi="Kerja Sama" />
-                    <div className="w-full flex flex-row h-fit gap-10 px-40">
+                    <div className="w-full flex flex-row mt-6 h-fit gap-10 px-40">
                     {content1.map((item, index) => {
                             return (
                                 <>

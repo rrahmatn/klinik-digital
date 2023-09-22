@@ -4,12 +4,13 @@ interface SmallCardProdukProps {
     gambar: string;
     judul: string;
     isi : string;
+    id: number
   }
 
-const SmallCardProduk :  React.FC<SmallCardProdukProps>  = ({gambar , judul , isi}) =>{
+const SmallCardProduk :  React.FC<SmallCardProdukProps>  = ({gambar , id , judul , isi}) =>{
     return(
         <>
-        <div className="2xl:w-96 w-80 h-28 shadow-md rounded-sm flex flex-row hover:shadow-lg transition duration-300 hover:scale-105 cursor-pointer items-center text-[#555555]">
+        <div key={id} className="2xl:w-96 w-80 h-28 shadow-md rounded-sm flex flex-row hover:shadow-lg transition duration-300 hover:scale-105 cursor-pointer items-center text-[#555555]">
             <div className="w-28 h-28 flex items-center overflow-hidden">
                 <Image src={gambar} width={112} height={112} alt='Gambar Produk'/>
             </div>

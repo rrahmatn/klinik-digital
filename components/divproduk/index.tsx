@@ -1,39 +1,44 @@
+'use client'
 import SmallCardProduk from "../small-card-produk";
+import { useState, useEffect } from "react";
 
 
-interface iProduct {
-  id: number;
-  title: string;
-  description: string;
-  thumbnail: string;
+interface Data {
+    title: string;
+    brand: string;
+    category: string;
+    price: number;
+    description: string;
+    thumbnail: string;
+    id: number
 }
-async function getData(): Promise<iProduct[]> {
-  
-  try {
-    const res = await fetch('https://dummyjson.com/products');
+const DivProduk: React.FC = () => {
 
-    if (!res.ok) {
-      throw new Error('Gagal mengambil data');
-    }
 
-    const data = await res.json();
-    return data.products as iProduct[];
-  } catch (error) {
-    console.error(error);
-    throw error;
-  }
-}
+    const [data, setData] = useState<Data[]>([])
+    const [isLoading, setLoading] = useState<boolean>(true)
 
-async function DivProduk() {
-  try {
-    const data = await getData();
+    useEffect(() => {
+        fetch(`https://dummyjson.com/products`).then(res => res.json()).then((data) => {
+            setData(data.products);
+            setLoading(false);
+        })
+    }, [])
+
+    if (isLoading) {
+        return (
+            <p className="w-full text-center text-4xl font-bold px-auto my-10 text-[#1f1717]">
+                Sedang Mengambil Data Sabar....</p>
+        )
+    } else {
+
       let indexNamaRandom = [];
       for (let i = 0; i > -1; i++) {
         var x = Math.floor(Math.random() * data.length);
         if (indexNamaRandom.indexOf(x) === -1) indexNamaRandom.push(x);
         if (indexNamaRandom.length === 6) break;
       }
-      let namaTerpilih : iProduct[] = [];
+      let namaTerpilih : Data[] = [];
       indexNamaRandom.forEach((index, indexNamaTerpilih) => {
         namaTerpilih[indexNamaTerpilih] = data[index];
       });    
@@ -44,8 +49,9 @@ async function DivProduk() {
           Produk Sejenis Lainnya
         </div>
         <div className="w-full h-fit py-5 grid grid-cols-3 2xl:grid-cols-4 gap-5">
-          {namaTerpilih.map((item: iProduct) => (
+          {namaTerpilih.map((item: Data) => (
             <SmallCardProduk
+              id={item.id}
               key={item.id}
               gambar={item.thumbnail}
               judul={item.title}
@@ -55,14 +61,6 @@ async function DivProduk() {
         </div>
       </div>
     );
-  } catch (error: any) {
-    // Tangani kesalahan, misalnya tampilkan pesan kesalahan atau indikator loading
-    return (
-      <div className="w-full h-fit">
-        Terjadi kesalahan saat memuat data: {error.message}
-      </div>
-    );
-  }
+    }
 }
-
 export default DivProduk;

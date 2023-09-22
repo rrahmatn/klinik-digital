@@ -21,7 +21,7 @@ const Aplikasi: React.FC = () => {
     return (
         <>
             <div className="w-full h-fit pt-[80px] flex flex-col">
-                <Navigator text={`#1f1717`} isi={`Home > Kategori > Aplikasi`} />
+                <Navigator text={`#1f1717`} link1="Kategori" link2="Aplikasi" />
                 <div className="w-full h-fit flex flex-row items-end py-5 bg-gradient-to-br gap-2 2xl:px-28 px-10 from-[#111E2F] to-[#283340]">
                     <div className="w-[120px] h-[140px] py-4 flex items-end items-center justify-center justify-center animate__animated animate__backInDown animate__delay-0.5s">
                         <Image src="/img/aplikasi/daun.svg" alt="dekor" fill={true} />

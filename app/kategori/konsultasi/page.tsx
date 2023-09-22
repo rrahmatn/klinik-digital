@@ -37,12 +37,12 @@ const Konsultasi: React.FC = () => {
         <>
             <div className="w-full h-fiy pt-[80px] flex flex-col">
                 <div className="w-full h-fit bg-gradient-to-br from-[#111E2F] to-[#283340] py-4 flex flex-col">
-                    <Navigator text="#f9f9f4" isi="Home > Kategori > Konsultasi" />
-                    <div className="w-full h-fit flex flex-col justify-center items-center mx-auto my-40">
-                        <div className="w-1/2 h-fit py-5 drop-shadow-[0_35px_35px_rgba(0,0,0,0.25)]text-center animate__zoomIn animate__animated animate__delay-0.5s text-[#f9f9f4] tracking-widest leading-tight font-bold text-3xl 2xl:text-4xl">Buat Janji Mudah & Cepat Untuk Transformasi Bisnis Anda</div>
+                    <Navigator text="#f9f9f4" link1="Kategori" link2="Konsultasi" />
+                    <div className="w-full h-fit flex flex-col justify-center items-center mx-auto my-36">
+                        <div className="w-1/2 h-fit py-5 ddrop-shadow-[0_35px_35px_rgba(0,0,0,0.45)]text-center animate__zoomIn animate__animated animate__delay-0.5s text-[#f9f9f4] tracking-widest leading-tight font-bold text-3xl 2xl:text-4xl">Buat Janji Mudah & Cepat Untuk Transformasi Bisnis Anda</div>
                         <div className="w-full h-fit flex flex-row items-center my-6 justify-center gap-10">
-                            <LinkButton warna="#F4A022" text="#f9f9f4" className="animate-pulse" isi="Hubungi Kami" link="/about" />
-                            <LinkButton text="#f9f9f4" warna='#111E2F' className="border-2 animate-pulse border-[#f9f9f4]" isi="Ajukan Penawaran" link="/" />
+                            <LinkButton warna="#F4A022" text="#f9f9f4" className="animate-pulse drop-shadow-[0_35px_35px_rgba(0,0,0,0.35)]" isi="Hubungi Kami" link="/about" />
+                            <LinkButton text="#f9f9f4" warna='#111E2F' className="border-2 animate-pulse border-[#f9f9f4] drop-shadow-[0_35px_35px_rgba(0,0,0,0.35)]" isi="Ajukan Penawaran" link="/" />
                         </div>
                     </div>
                 </div>
