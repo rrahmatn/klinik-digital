@@ -50,7 +50,7 @@ const Aplikasi: React.FC = () => {
                     </div>
                     <AllAplikasi/>
                 </div>
-                <div className="w-full h-fit 2xl:px-40 px-10 md:px-20">
+                <div className="w-full h-fit 2xl:px-40 px-10 md:px-20cl">
                     <DivProduk />
                 </div>
             </div>
