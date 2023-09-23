@@ -1,16 +1,18 @@
 import Image from 'next/image';
+import Link from "next/link";
 
 interface SmallCardProdukProps {
     gambar: string;
     judul: string;
     isi : string;
-    id: number
+    id: number;
+    link: string;
   }
 
-const SmallCardProduk :  React.FC<SmallCardProdukProps>  = ({gambar , id , judul , isi}) =>{
+const SmallCardProduk :  React.FC<SmallCardProdukProps>  = ({gambar , link , id , judul , isi}) =>{
     return(
         <>
-        <div key={id} className="2xl:w-96 w-80 h-28 shadow-md rounded-sm flex flex-row hover:shadow-lg transition duration-300 hover:scale-105 cursor-pointer items-center text-[#555555]">
+        <Link href={link} key={id} className="2xl:w-96 w-80 h-28 shadow-md rounded-sm flex flex-row hover:shadow-lg transition duration-300 hover:scale-105 cursor-pointer items-center text-[#555555]">
             <div className="w-28 h-28 flex items-center overflow-hidden">
                 <Image src={gambar} width={112} height={112} alt='Gambar Produk'/>
             </div>
@@ -19,7 +21,7 @@ const SmallCardProduk :  React.FC<SmallCardProdukProps>  = ({gambar , id , judul
                 <div className="w-full h-2/3 text-justify text-sm line-clamp-3">{isi}</div>
             </div>
              
-        </div>
+        </Link>
         
         </>
     )

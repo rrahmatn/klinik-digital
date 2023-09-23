@@ -25,25 +25,25 @@ const Navigator: React.FC<NavProps> = ({text, link1, link2, link3 , idLink3 }) =
     if (link1 && !link2 && !link3) {
       return (
         <>
-          <Link href={`/`} className='mx-4 w-fit h-fit cursor-pointer'>Home</Link><MdArrowForwardIos />
-          <Link href={`/${link1.toLowerCase()}`} className='mx-4 w-fit h-fit cursor-pointer'>{link1}</Link>
+          <Link href={`/`} className='md:mx-4 mx-1 w-fit h-fit cursor-pointer'>Home</Link><MdArrowForwardIos />
+          <Link href={`/${link1.toLowerCase()}`} className='md:mx-4 mx-1 w-fit h-fit cursor-pointer'>{link1}</Link>
         </>
       )
     }if (link1 && link2 && !link3) {
       return (
         <>
-          <Link href={`/`} className='mx-4 w-fit h-fit cursor-pointer'>Home</Link><MdArrowForwardIos />
-          <Link href={`/${link1.toLowerCase()}`} className='mx-4 w-fit h-fit cursor-pointer'>{link1}</Link><MdArrowForwardIos />
-          <Link href={`/${link1.toLowerCase()}/${link2.toLowerCase()}`} className='mx-4 w-fit h-fit cursor-pointer'>{link2}</Link>
+          <Link href={`/`} className='md:mx-4 mx-1 w-fit h-fit cursor-pointer'>Home</Link><MdArrowForwardIos />
+          <Link href={`/${link1.toLowerCase()}`} className='md:mx-4 mx-1 w-fit h-fit cursor-pointer'>{link1}</Link><MdArrowForwardIos />
+          <Link href={`/${link1.toLowerCase()}/${link2.toLowerCase()}`} className='md:mx-4 mx-1 w-fit h-fit cursor-pointer'>{link2}</Link>
         </>
       )
     }if (link1 && link2 && link3) {
       return (
         <>
-          <Link href={`/`} className='mx-4 w-fit h-fit cursor-pointer'>Home</Link><MdArrowForwardIos />
-          <Link href={`/${link1.toLowerCase()}`} className='mx-4 w-fit h-fit cursor-pointer'>{link1}</Link><MdArrowForwardIos />
-          <Link href={`/${link1.toLowerCase()}/${link2.toLowerCase()}`} className='mx-4 w-fit h-fit cursor-pointer'>{link2}</Link><MdArrowForwardIos />
-          <Link href={`/${link1.toLowerCase()}/${link2.toLowerCase()}/${idLink3}`} className='mx-4 w-fit h-fit cursor-pointer'>{link3}</Link>
+          <Link href={`/`} className='md:mx-4 mx-1 w-fit h-fit cursor-pointer'>Home</Link><MdArrowForwardIos />
+          <Link href={`/${link1.toLowerCase()}`} className='md:mx-4 mx-1 w-fit h-fit cursor-pointer'>{link1}</Link><MdArrowForwardIos />
+          <Link href={`/${link1.toLowerCase()}/${link2.toLowerCase()}`} className='md:mx-4 mx-1 w-fit h-fit cursor-pointer'>{link2}</Link><MdArrowForwardIos />
+          <Link href={`/${link1.toLowerCase()}/${link2.toLowerCase()}/${idLink3}`} className='md:mx-4 mx-1 w-fit h-fit cursor-pointer'>{link3}</Link>
         </>
       )
     }

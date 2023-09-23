@@ -51,6 +51,7 @@ const DivProduk: React.FC = () => {
         <div className="w-full h-fit py-5 grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 2xl:grid-cols-4 gap-5">
           {namaTerpilih.map((item: Data) => (
             <SmallCardProduk
+            link={`/kategori/aplikasi/${item.id}`}
               id={item.id}
               key={item.id}
               gambar={item.thumbnail}
