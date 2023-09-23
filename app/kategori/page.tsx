@@ -48,7 +48,7 @@ const Kategori: React.FC = () => {
             <div className="w-full h-fit pt-[80px] bg-[#ecedf1] flex flex-col">
                 <Navigator text={'#1f1717'} link1="Kategori" />
                 <div className="lg:w-2/3 w-full 2xl:w-1/2 font-bold xl:text-4xl text-xl text-[#555555] text-left py-5 lg:px-10 px-4 2xl:px-40 xl:pl-24 "> Produk digital terbaik untuk kemajuan bisnis anda</div>
-                <div className="w-full h-fit lg:px-10 px-4 xl:px-40 xl:pl-24 py-5 flex md:flex-row flex-col gap-8 items-center justify-around">
+                <div className="w-full h-fit lg:px-10 px-4 xl:px-40 xl:pl-24 py-5 flex md:flex-row flex-col-reverse gap-8 items-center justify-around">
                     {content1.map((item, index) => {
                         return (
                             <>
