@@ -52,7 +52,7 @@ const Navigator: React.FC<NavProps> = ({text, link1, link2, link3 , idLink3 }) =
 
   return (
     <>
-      <div className={`w-full h-fit flex flex-row items-center font-semibold px-24 py-3 tracking-wide animate__bounceInLeft animate__animated animate__delay-0.5s text-base xl:text-lg`} style={style}>
+      <div className={`w-full h-fit flex flex-row items-center font-semibold lg:px-24 md:px-10 px-2 sm:px-5 py-3 tracking-wide animate__bounceInLeft animate__animated animate__delay-0.5s text-base xl:text-lg`} style={style}>
         {paraisi()}
       </div>
     </>

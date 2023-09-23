@@ -17,15 +17,15 @@ const Button: React.FC<ButtonProps> = ({ warna, text, isi, onClick , className }
 
   return (
     <>
-      <div
-        className={`${className} w-48 h-11 2xl:w-56 2xl:h-16 2xl:text-xl text-lg md:text-md rounded-xl gap-[10px] px-auto py-2 text-center flex justify-center items-center font-semibold cursor-pointer`}
+      <button
+        className={`${className} w-48 min-w-max h-11 2xl:w-56 2xl:h-16 2xl:text-xl text-lg md:text-md rounded-xl gap-[10px] px-2 py-2 text-center flex justify-center items-center font-semibold cursor-pointer`}
         style={{ backgroundColor: hover, color: text }}
         onClick={onClick}
         onMouseEnter={(): void => setHovered(true)}
         onMouseLeave={(): void => setHovered(false)}
       >
         {isi}
-      </div>
+      </button>
     </>
   );
 };

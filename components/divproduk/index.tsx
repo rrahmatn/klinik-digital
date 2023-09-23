@@ -44,11 +44,11 @@ const DivProduk: React.FC = () => {
       });    
     
     return (
-      <div className="w-full h-fit flex flex-col">
+      <div className="w-full h-fit flex flex-col mx-auto">
         <div className="w-full h-fit py-2 font-bold text-2xl 2xl:text-3xl text-[#1f1717]">
           Produk Sejenis Lainnya
         </div>
-        <div className="w-full h-fit py-5 grid grid-cols-3 2xl:grid-cols-4 gap-5">
+        <div className="w-full h-fit py-5 grid sm:grid-cols-2 lg:grid-cols-3 grid-cols-1 2xl:grid-cols-4 gap-5">
           {namaTerpilih.map((item: Data) => (
             <SmallCardProduk
               id={item.id}

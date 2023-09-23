@@ -25,6 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
     background-color: #ecedf1;
+    overflow-x: hidden;
 }
 
 *{
