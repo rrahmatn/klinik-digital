@@ -41,7 +41,7 @@ const Page: React.FC<props> = ({ params }) => {
         backgroundImage: data.images ? `url(${data.images[0]})` : 'none'
     }
     return (
-        <main className="pt-20 flex flex-col bg-[#ecedf1] text-[#555555]">
+        <main className="pt-20 flex flex-col bg-[#ecedf1] text-[#555555] mb-3">
             <Navigator text='#1f1717' link1='Kategori' link2='Aplikasi' link3={data.title} idLink3={data.id} />
             <div className={`w-full h-40 md:h-80 z-0 grid place-content-center bg-no-repeat bg-cover`} style={divStyle}> 
                 <button className='font-bold text-7xl text-zinc-100'><FaRegPlayCircle/></button>
@@ -61,7 +61,7 @@ const Page: React.FC<props> = ({ params }) => {
                     </span>
                 </div>
                 <div className="w-full h-fit flex-col flex md:flex-row border-t-4 border-[#555555] ">
-                    <div className="w-full md:w-2/3 flex-2 flex-col font-bold">
+                    <div className="w-full md:w-2/3 flex-2 flex-col font-bold py-2">
                         <nav className='w-full bg-[#f9f9f4]'>
                             <ul className='w-full shadow-lg flex'>
                                 <li className='w-1/4 h-12 items-center flex flex-row hover:border-b-2 hover:border-orange-600 justify-center gap-3 cursor-pointer text-md hover:text-orange-600'><FiMenu className="text-3xl"/> <p className="hidden md:flex">Tentang Produk</p></li>
@@ -70,10 +70,16 @@ const Page: React.FC<props> = ({ params }) => {
                                 <li className='w-1/4 h-12 items-center flex flex-row hover:border-b-2 hover:border-orange-600 justify-center gap-3 cursor-pointer text-md hover:text-orange-600'><FaDollarSign className="text-3xl"/> <p className="hidden md:flex">Harga</p></li>
                             </ul>
                         </nav>
-                        <h3 className="text-2xl px-3 md:px-0 font-bold">Tentang Produk</h3>
-                        <p className='text-md text-left px-3 md:px-0'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, tenetur doloremque! Minima vel et nihil pariatur eveniet, recusandae vitae laboriosam quos, saepe ea temporibus consequuntur laudantium quis, libero provident aliquid.</p>
-                        <h3 className="text-2xl px-3 md:px-0 font-bold">Fitur</h3>
-
+                        <h3 className="text-2xl px-6 md:px-5 my-8 font-bold">Tentang Produk</h3>
+                        <p className='text-md text-left px-6 font-normal mb-4 md:px-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, tenetur doloremque! Minima vel et nihil pariatur eveniet, recusandae vitae laboriosam quos, saepe ea temporibus consequuntur laudantium quis, libero provident aliquid.</p>
+                        <h3 className="text-2xl px-6 md:px-5 font-bold my-5">Fitur</h3>
+                        <div className="w-full h-fit grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+                        <div className="w-80 md:w-64 border-2 border-neutral-800 md:h-96 mx-auto h-[414px] bg-[#f9f9f4] flex flex-col">.</div>
+                        <div className="w-80 md:w-64 border-2 border-neutral-800 md:h-96 mx-auto h-[414px] bg-[#f9f9f4] flex flex-col">.</div>
+                        <div className="w-80 md:w-64 border-2 border-neutral-800 md:h-96 mx-auto h-[414px] bg-[#f9f9f4] flex flex-col">.</div>
+                        <div className="w-80 md:w-64 border-2 border-neutral-800 md:h-96 mx-auto h-[414px] bg-[#f9f9f4] flex flex-col">.</div>
+                        <div className="w-80 md:w-64 border-2 border-neutral-800 md:h-96 mx-auto h-[414px] bg-[#f9f9f4] flex flex-col">.</div>
+                    </div>
                     </div>
                     <div className="w-full md:w-1/3 flex-1 flex bg-[#f9f9f4] shadow-md py-4 md:py-8 flex-col px-3 text-left md:px-7 ">
                         <h3 className="text-2xl font-bold pb-4">Detail Pemilik</h3>
@@ -122,8 +128,8 @@ const Page: React.FC<props> = ({ params }) => {
                             </li>
                         </ul>
                         <h3 className="text-2xl mt-8 font-bold">Description</h3>
-                        <p className="text-md text-left my-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta et repudiandae quo obcaecati at ducimus consequatur maxime, inventore mollitia earum ex neque nam itaque cum veritatis animi esse non quaerat.</p>
-                    </div>
+                        <p className="text-md text-left  my-4">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dicta et repudiandae quo obcaecati at ducimus consequatur maxime, inventore mollitia earum ex neque nam itaque cum veritatis animi esse non quaerat.</p>
+                    </div>   
                 </div>
             </div>
         </main>
