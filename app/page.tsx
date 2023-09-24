@@ -87,13 +87,13 @@ const Home: React.FC = () => {
     <>
       <div className="flex min-h-screen flex-col w-vw overflow-x-hidden items-center justify-between pt-16">
         <Cover />
-        <div className="w-full h-fit -mt-10 -mt-1 bg-[#191E37] animate__animated animate__animated flex flex-row items-center justify-between px-10 py-5 " id='content1'>
+        <div className="w-full h-fit -mt-11 bg-[#191E37] animate__animated animate__animated flex flex-row items-center justify-between px-10 py-5 " id='content1'>
           <Image src='/img/bg.svg' className="w-40 my-auto h-fit hidden md:flex" alt='bg' width={215} height={683} />
           <div className="md:w-2/3 w-full sm:py-1 lg:1/4 h-full flex flex-col justify-center  text-left text-[#ffffff] gap-7 ">
             <h1 className="2xl:text-4xl text-3xl font-bold pt-4 pb-2 text-left">Produk Pilihan untuk Mitra Kami</h1>
             {content1.map((item, index) => (
               <article key={index}>
-                <h2 className="xl:text-2xl text-xl font-semibold py-1">{item.judul}</h2>
+                <h2 className="xl:text-2xl  text-xl font-semibold py-1">{item.judul}</h2>
                 <p className="xl:text-xl text-md">{item.isi}</p>
               </article>
             ))}
@@ -106,7 +106,7 @@ const Home: React.FC = () => {
             {content2.map((item, index) => {
               return (
                 <figure key={index} className="lg:w-60 md:w-44 w-full h-fit flex flex-col gap-4 transition duration-200 hover:scale-105 cursor-pointer items-center mx-auto mb-10 ">
-                  <h1 className="w-full h-20  xl:text-xl md:text-md text-[#F4A022] text-center font-semibold px-2">{item.judul}</h1>
+                  <h1 className="w-full h-20 xl:text-xl md:text-md text-[#F4A022] text-center font-semibold px-2">{item.judul}</h1>
                   <div className="xl:w-60 xl:h-60 h-44 w-44 overflow-visible hover:scale-125 transition duration-250  flex items-center justify-center">
                     <Image src={`/img/content2/${item.gambar}`} width={272} height={272} alt="gambar konten2" />
                   </div>
@@ -131,7 +131,7 @@ const Home: React.FC = () => {
             </div>
           </article>
           <div className="md:w-1/2 w-full h-10/12 flex flex-row items-center my-2">
-            <div className="w-1/6 hover:scale-110 h-fit shadow-sm flex items-center justify-center animate-pulse text-5xl font-bold cursor-pointer hover:scale-110">
+            <div className="w-1/6 hover:scale-110 h-fit shadow-sm flex items-center justify-center animate-pulse text-5xl font-bold cursor-pointer">
               <MdKeyboardDoubleArrowLeft
                 onClick={() => {
                   setKategori((prevKategori) => prevKategori === 0 ? 2 : prevKategori - 1)
@@ -139,7 +139,7 @@ const Home: React.FC = () => {
 
             </div>
             <div className="w-4/6 h-fit shadow-sm flex flex-col items-center justify-center content-center"><p className='text-xl text-semibold py-3'>{content3[kategori ? kategori : 0].isi}</p> <LinkButton link={`${content3[kategori ? kategori : 0].url}`} className='animate-pulse' warna="#F4A022" text="#ffffff" isi={`Cek ${content3[kategori].isi}`} /></div>
-            <div className="w-1/6 hover:scale-110 h-fit shadow-sm flex items-center justify-center animate-pulse text-5xl font-bold cursor-pointer hover:scale-110">
+            <div className="w-1/6 h-fit shadow-sm flex items-center justify-center animate-pulse text-5xl font-bold cursor-pointer hover:scale-110">
               <MdKeyboardDoubleArrowRight
                 onClick={() => setKategori((prevKategori) => (prevKategori + 1) % 3)} />
             </div>

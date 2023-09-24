@@ -13,7 +13,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <header className="shadow-md fixed top-0 w-screen overflow-x-hidden h-[80px] flex flex-row bg-[#ffffff] items-center justify-between lg:pl-20 pl-5 lg:pr-10">
+      <header className="shadow-md fixed top-0 w-screen z-50 overflow-x-hidden h-[80px] flex flex-row bg-[#ffffff] items-center justify-between lg:pl-20 pl-5 lg:pr-10">
         <div className="lg:w-2/3 w-full h-full flex flex-row lg:ml-7 items-center justify-between lg:justify-around">
           <Link href="/" className={`${menu ? 'hidden' : 'flex'}`}>
             <figure className="w-fit h-1/2 flex flex-row drop-shadow-2xl px-1 gap-3 mr-5 items-center">
@@ -21,7 +21,7 @@ const Navbar: React.FC = () => {
               <Image src="/img/klinik-digital.svg" alt="Klinik Digital" width={148} height={40} />
             </figure>
           </Link>
-          <nav className="lg:w-2/3 w-full mx-5 justify-center lg:justify-start h-fit list-none items-center hidden md:flex flex-row px-4 font-semibold gap-9 text-[#667080]  font-light">
+          <nav className="lg:w-2/3 w-full mx-5 justify-center lg:justify-start h-fit list-none items-center hidden md:flex flex-row px-4 font-semibold gap-9 text-[#667080] ">
             <li>
               <Link className='hover:text-[#363636] ' href="/kategori">Solusi Digital</Link>
             </li>
