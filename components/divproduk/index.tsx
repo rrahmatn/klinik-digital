@@ -24,27 +24,29 @@ const DivProduk: React.FC = () => {
             setLoading(false);
         })
     }, [])
-    let indexNamaRandom = [];
-      for (let i = 0; i > -1; i++) {
-        var x = Math.floor(Math.random() * data.length);
-        if (indexNamaRandom.indexOf(x) === -1) indexNamaRandom.push(x);
-        if (indexNamaRandom.length === 6) break;
-      }
-      let namaTerpilih : Data[] = [];
-      indexNamaRandom.forEach((index, indexNamaTerpilih) => {
-        namaTerpilih[indexNamaTerpilih] = data[index];
-      }); 
+
 
     if (isLoading) {
       return (
           <>
-              <span className="loading loading-dots loading-xs"></span>
-              <span className="loading loading-dots loading-sm"></span>
-              <span className="loading loading-dots loading-md"></span>
-              <span className="loading loading-dots loading-lg"></span>
+              <div className="w-screen mx-auto flex items-center justify-center font-extrabold">
+                    <span className="loading mx-auto text-7xl loading-dots loading-lg"></span>
+                    <span className="loading mx-auto text-7xl loading-dots loading-lg"></span>
+                    <span className="loading mx-auto text-7xl loading-dots loading-lg"></span>
+                </div>
           </>
       )
-  } else {    
+  } else {   
+    let indexNamaRandom = [];
+    for (let i = 0; i > -1; i++) {
+      var x = Math.floor(Math.random() * data.length);
+      if (indexNamaRandom.indexOf(x) === -1) indexNamaRandom.push(x);
+      if (indexNamaRandom.length === 6) break;
+    }
+    let namaTerpilih : Data[] = [];
+    indexNamaRandom.forEach((index, indexNamaTerpilih) => {
+      namaTerpilih[indexNamaTerpilih] = data[index];
+    });  
     return (
       <div className="w-full h-fit flex flex-col mx-auto">
         <div className="w-full h-fit py-2 font-bold text-2xl 2xl:text-3xl text-[#1f1717]">

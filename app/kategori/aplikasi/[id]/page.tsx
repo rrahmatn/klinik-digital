@@ -51,10 +51,11 @@ const Page: React.FC<props> = ({ params }) => {
     if (loading) {
         return (
             <>
-                <span className="loading loading-dots loading-xs"></span>
-                <span className="loading loading-dots loading-sm"></span>
-                <span className="loading loading-dots loading-md"></span>
-                <span className="loading loading-dots loading-lg"></span>
+                <div className="w-screen mx-auto flex items-center justify-center font-extrabold">
+                    <span className="loading mx-auto text-7xl loading-dots loading-lg"></span>
+                    <span className="loading mx-auto text-7xl loading-dots loading-lg"></span>
+                    <span className="loading mx-auto text-7xl loading-dots loading-lg"></span>
+                </div>
             </>
         )
     } else{
