@@ -28,6 +28,7 @@
     "typescript": "5.2.2"
   },
   "devDependencies": {
-    "@types/hex-rgba": "^1.0.1"
+    "@types/hex-rgba": "^1.0.1",
+    "daisyui": "^3.7.7"
   }
 }

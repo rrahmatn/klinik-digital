@@ -6,7 +6,7 @@ import 'animate.css';
 import LinkButton from "@/components/link-button";
 import { MdKeyboardDoubleArrowLeft, MdKeyboardDoubleArrowRight } from 'react-icons/md';
 import { useState, useEffect } from 'react';
-import Test from "@/components/test";
+// import Test from "@/components/test";
 
 
 interface icontent1 {
@@ -99,7 +99,6 @@ const Home: React.FC = () => {
               </article>
             ))}
           </div>
-          <Test/>
           <Image src='/img/home-content.svg' className="w-1/3 xl:flex h-fit hidden" width={593} height={593} alt='foto' />
         </div>
         <div className="w-full h-fit flex flex-col items-center  justify-center bg-[#ECEDF1] px-16 py-2 pb-3" >

@@ -55,7 +55,7 @@ const Kategori: React.FC = () => {
                                 <div key={item.id} className={`md:w-1/3 w-full 2xl:h-[520px] rounded-sm shadow-md min-h-max h-96 bg-[#ffffff] ${item.animated} animate__fadeInLeftBig animate__animated  hover:bg-[#F4A022] flex py-4 transition duration-250 hover:scale-105 overflow-visible`}>
                                     <Link href={item.url} key={index} className={`w-full h-full flex flex-col items-center justify-end text-center`}>
                                         <Image src={`img/kategori/content1/${item.gambar}`} className={`w-11/12 h-10/12 transition duration-250`} alt='gambar' fill={true} />
-                                        <div className="w-full relative text-center xl:h-80px h-2/12 xl:text-3xl xl:py-4 text-2xl text-[#1f1717] font-semibold text-center "><p>{item.isi}</p></div>
+                                        <div className="w-full relative text-center xl:h-80px h-2/12 xl:text-3xl xl:py-4 text-2xl text-[#1f1717] font-semibold"><p>{item.isi}</p></div>
                                     </Link >
                                 </div>
                             </>

@@ -10,8 +10,9 @@ import { MdOutlineScreenshotMonitor, MdSell, MdLocationPin } from 'react-icons/m
 import { FaDollarSign } from 'react-icons/fa';
 import { RiGlobalLine } from 'react-icons/ri';
 import { FcCheckmark } from "react-icons/fc";
-import { GrClose } from "react-icons/gr"
-
+import { GrClose } from "react-icons/gr";
+import Link from "next/link";
+import DivProduk from '@/components/divproduk';
 
 interface props {
     params: {
@@ -23,7 +24,8 @@ interface Data {
     title: string;
     thumbnail: string;
     brand: string;
-    images: string[]
+    images: string[];
+    price: number;
 }
 interface DivStyle {
     backgroundImage: string;
@@ -34,7 +36,8 @@ const Page: React.FC<props> = ({ params }) => {
         title: "saa",
         thumbnail: "/img/aplikasi/sampleCoverVideo.svg",
         brand: "Website",
-        images: ["/img/aplikasi/sampleCoverVideo.svg", "/img/aplikasi/sampleCoverVideo.svg"]
+        images: ["/img/aplikasi/sampleCoverVideo.svg", "/img/aplikasi/sampleCoverVideo.svg"],
+        price: 199
     })
     useEffect(() => {
         fetch(`https://dummyjson.com/products/${params.id}`, { cache: "no-store" }).then(res => res.json()).then((data) => setData(data))
@@ -54,7 +57,7 @@ const Page: React.FC<props> = ({ params }) => {
                     <div className="w-full md:w-2/3 flex-2 flex flex-col md:flex-row items-start w md:items-baseline gap-3">
                         <figure className='h-52 w-52 shadow-lg rounded-md overflow-hidden bg-slate-500 items-center flex'><Image src={`${data.thumbnail}`} alt={data.title} width={210} height={210} /></figure>
                         <div className="w-fit flex-1 h-fit text-left gap-2">
-                            <h2 className='text-4xl'>{data.title}</h2>
+                            <h2 className='text-4xl font-extrabold'>{data.title}</h2>
                             <div className='text-xl'>{data.brand}</div>
                         </div>
                     </div>
@@ -67,15 +70,15 @@ const Page: React.FC<props> = ({ params }) => {
                     <div className="w-full md:w-2/3 flex-2 flex-col font-bold pb-2">
                         <nav className='w-full bg-[#f9f9f4]'>
                             <ul className='w-full shadow-lg flex'>
-                                <li className='w-1/4 h-12 items-center flex flex-row hover:border-b-2 hover:border-orange-600 justify-center gap-3 cursor-pointer text-md hover:text-orange-600'><FiMenu className="text-3xl" /> <p className="hidden md:flex">Tentang Produk</p></li>
-                                <li className='w-1/4 h-12 items-center flex flex-row hover:border-b-2 hover:border-orange-600 justify-center gap-3 cursor-pointer text-md hover:text-orange-600'><AiFillSetting className="text-3xl" /> <p className="hidden md:flex">Feature</p></li>
-                                <li className='w-1/4 h-12 items-center flex flex-row hover:border-b-2 hover:border-orange-600 justify-center gap-3 cursor-pointer text-md hover:text-orange-600'><MdOutlineScreenshotMonitor className="text-3xl" /> <p className="hidden md:flex">Tangkapan Layar</p></li>
-                                <li className='w-1/4 h-12 items-center flex flex-row hover:border-b-2 hover:border-orange-600 justify-center gap-3 cursor-pointer text-md hover:text-orange-600'><FaDollarSign className="text-3xl" /> <p className="hidden md:flex">Harga</p></li>
+                                <Link href="#tentangProduk" className='w-1/4 h-12 items-center flex flex-row hover:border-b-2 hover:border-orange-600 justify-center gap-3 cursor-pointer text-md hover:text-orange-600'><FiMenu className="text-3xl" /> <p className="hidden md:flex">Tentang Produk</p></Link>
+                                <Link href="#fitur" className='w-1/4 h-12 items-center flex flex-row hover:border-b-2 hover:border-orange-600 justify-center gap-3 cursor-pointer text-md hover:text-orange-600'><AiFillSetting className="text-3xl" /> <p className="hidden md:flex">Feature</p></Link>
+                                <Link href="#screenshot" className='w-1/4 h-12 items-center flex flex-row hover:border-b-2 hover:border-orange-600 justify-center gap-3 cursor-pointer text-md hover:text-orange-600'><MdOutlineScreenshotMonitor className="text-3xl" /> <p className="hidden md:flex">Tangkapan Layar</p></Link>
+                                <Link href="#screenshot" className='w-1/4 h-12 items-center flex flex-row hover:border-b-2 hover:border-orange-600 justify-center gap-3 cursor-pointer text-md hover:text-orange-600'><FaDollarSign className="text-3xl" /> <p className="hidden md:flex">Harga</p></Link>
                             </ul>
                         </nav>
-                        <h3 className="text-2xl px-6 md:px-5 my-8 font-bold">Tentang Produk</h3>
+                        <h3 className="text-2xl px-6 md:px-5 my-8 font-bold" id="tentangProduk">Tentang Produk</h3>
                         <p className='text-md text-left px-6 font-normal mb-4 md:px-5'>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eum, tenetur doloremque! Minima vel et nihil pariatur eveniet, recusandae vitae laboriosam quos, saepe ea temporibus consequuntur laudantium quis, libero provident aliquid.</p>
-                        <h3 className="text-2xl px-6 md:px-5 font-bold my-5">Fitur</h3>
+                        <h3 className="text-2xl px-6 md:px-5 font-bold my-5" id="fitur">Fitur</h3>
                         <div className="w-full h-fit grid grid-cols-1 md:grid-cols-2 2xl:grid-cols-3 gap-6">
                             <div className="w-80 xl:w-[320px] text-center p-3 gap-3 md:w-64 md:h-96 mx-auto h-[414px] justify-center py-2 bg-[#f9f9f4] flex flex-col">
                                 <figure className="w-48 h-36 flex items-center mx-auto justify-center">
@@ -178,19 +181,69 @@ const Page: React.FC<props> = ({ params }) => {
                     </div>
                 </div>
             </div>
-            <div className="w-full h-fit flex-col bg-[#191e37] px-20 py-10 hidden md:flex">
+            <div className="w-full h-fit flex-col bg-[#191e37] px-20 py-10 hidden md:flex" id="screenshot">
                 <h2 className='text-2xl text-[#f9f9f4] pb-10 font-bold'>Tangkapan layar</h2>
-                <div className="w-full flex flex-row gap-6">
+                <div className="w-full flex flex-row gap-6 snap-mandatory snap-x overflow-x-scroll scroll-smooth snap-start scroll-m-1.5 overflow-y-hidden">
                     {data.images.map((item: string) => {
                         return (
                             <>
-                                <figure className='w-52 h-52 overflow-hidden shadow-md hober:shadow-xl items-center flex hover:scale-105'>
+                                <figure className='w-52 h-52 shrink-0 overflow-hidden shadow-md hober:shadow-xl items-center flex hover:scale-105'>
                                     <Image src={item} width={200} height={200} className='h-full w-auto' alt="screenshot" />
                                 </figure>
                             </>
                         )
                     })}
                 </div>
+            </div>
+            <div className="w-full flex flex-col md:hidden py-4 h-fit bg-[#191e37]">
+                <h2 className='text-2xl  text-[#f9f9f4] px-6 font-bold'>Tangkapan layar</h2>
+                <div className="w-full px-8 pt-5 h-fit carousel  py-1 rounded-box" id="screenshot">
+                    {data.images.map((item: string) => {
+                        return (
+                            <>
+                                <figure className='carousel-item w-full sm:h-64 h-52 overflow-hidden shadow-md hober:shadow-xl items-start flex hover:scale-105'>
+                                    <Image src={item} width={200} height={200} className='w-full h-fit' alt="screenshot" />
+                                </figure>
+                            </>
+                        )
+                    })}
+                </div>
+            </div>
+            <div className="w-full h-fit flex-col bg-[#F4A022] px-4 md:px-20 py-4 flex" id="screenshot">
+                <h2 className='text-2xl  text-[#f9f9f4] pb-6 px-6 font-bold'>Harga</h2>
+                <div className="w-full h-fit flex flex-row gap-5 snap-mandatory snap-x overflow-x-scroll scroll-smooth snap-start scroll-m-1.5 overflow-y-hidden">
+                    <div className="card md:w-96 w-10/12 h-48 shrink-0 flex bg-[#fcfcfc] shadow-xl">
+                        <div className="card-body w-full h-full items-center text-center">
+                            <h2 className="card-title">Gratis!</h2>
+                            <p className="text-4xl">${data.price}</p>
+                            <p className="text-lg"> Pengguna/Perbulan</p>
+                        </div>
+                    </div>
+                    <div className="card md:w-96 w-10/12 h-48 shrink-0 flex bg-[#fcfcfc] shadow-xl">
+                        <div className="card-body w-full h-full items-center text-center">
+                            <h2 className="card-title">Gratis!</h2>
+                            <p className="text-4xl">${data.price}</p>
+                            <p className="text-lg"> Pengguna/Perbulan</p>
+                        </div>
+                    </div>
+                    <div className="card md:w-96 w-10/12 h-48 shrink-0 flex bg-[#fcfcfc] shadow-xl">
+                        <div className="card-body w-full h-full items-center text-center">
+                            <h2 className="card-title">Gratis!</h2>
+                            <p className="text-4xl">${data.price}</p>
+                            <p className="text-lg"> Pengguna/Perbulan</p>
+                        </div>
+                    </div>
+                    <div className="card md:w-96 w-10/12 h-48 shrink-0 flex bg-[#fcfcfc] shadow-xl">
+                        <div className="card-body w-full h-full items-center text-center">
+                            <h2 className="card-title">Gratis!</h2>
+                            <p className="text-4xl">${data.price}</p>
+                            <p className="text-lg"> Pengguna/Perbulan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="px-10">
+                <DivProduk />
             </div>
         </main>
     )
