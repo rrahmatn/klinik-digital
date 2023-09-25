@@ -28,8 +28,12 @@ const AllWebsite: React.FC = () => {
 
     if (isLoading) {
         return (
-            <p className="w-full text-center text-4xl font-bold px-auto my-10 text-[#1f1717]">
-                Sedang Mengambil Data Sabar....</p>
+            <>
+                <span className="loading loading-dots loading-xs"></span>
+                <span className="loading loading-dots loading-sm"></span>
+                <span className="loading loading-dots loading-md"></span>
+                <span className="loading loading-dots loading-lg"></span>
+            </>
         )
     } else {
         return (
@@ -48,7 +52,7 @@ const AllWebsite: React.FC = () => {
                                     <LinkButton link="/website/2" className="border-2 border-[#1f1717] shadow-md" text="#1f1717" isi="Ajukan Penawaran" warna="#f9f9f4" />
                                 </div>
                             </div>
-                            <div className="lg:w-1/2 w-full lg: h-full h-1/2 overflow-hidden mt-6 flex items-start justify-items-center">
+                            <div className="lg:w-1/2 w-full lg:h-full h-1/2   overflow-hidden mt-6 flex items-start justify-items-center">
                                 <Image src={item.thumbnail} className="lg:rounded-tl-[60px] rounded-lg h-fit w-full" alt="gambar website" width={500} height={400} />
                             </div>
                         </div >

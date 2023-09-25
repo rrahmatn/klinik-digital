@@ -24,15 +24,7 @@ const DivProduk: React.FC = () => {
             setLoading(false);
         })
     }, [])
-
-    if (isLoading) {
-        return (
-            <p className="w-full text-center text-4xl font-bold px-auto my-10 text-[#1f1717]">
-                Sedang Mengambil Data Sabar....</p>
-        )
-    } else {
-
-      let indexNamaRandom = [];
+    let indexNamaRandom = [];
       for (let i = 0; i > -1; i++) {
         var x = Math.floor(Math.random() * data.length);
         if (indexNamaRandom.indexOf(x) === -1) indexNamaRandom.push(x);
@@ -41,8 +33,18 @@ const DivProduk: React.FC = () => {
       let namaTerpilih : Data[] = [];
       indexNamaRandom.forEach((index, indexNamaTerpilih) => {
         namaTerpilih[indexNamaTerpilih] = data[index];
-      });    
-    
+      }); 
+
+    if (isLoading) {
+      return (
+          <>
+              <span className="loading loading-dots loading-xs"></span>
+              <span className="loading loading-dots loading-sm"></span>
+              <span className="loading loading-dots loading-md"></span>
+              <span className="loading loading-dots loading-lg"></span>
+          </>
+      )
+  } else {    
     return (
       <div className="w-full h-fit flex flex-col mx-auto">
         <div className="w-full h-fit py-2 font-bold text-2xl 2xl:text-3xl text-[#1f1717]">

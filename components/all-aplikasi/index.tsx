@@ -27,10 +27,14 @@ const AllWebsite: React.FC = () => {
 
     if (isLoading) {
         return (
-            <p className="w-full text-center text-4xl font-bold px-auto my-10 text-[#1f1717]">
-                Sedang Mengambil Data Sabar....</p>
+            <>
+                <span className="loading loading-dots loading-xs"></span>
+                <span className="loading loading-dots loading-sm"></span>
+                <span className="loading loading-dots loading-md"></span>
+                <span className="loading loading-dots loading-lg"></span>
+            </>
         )
-    } else {
+    }else {
         return (
             <>
                 {data.map((item: Data , index : number ) => (

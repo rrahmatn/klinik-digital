@@ -39,13 +39,25 @@ const Page: React.FC<props> = ({ params }) => {
         images: ["/img/aplikasi/sampleCoverVideo.svg", "/img/aplikasi/sampleCoverVideo.svg"],
         price: 199
     })
+    const [loading , setLoading] = useState<boolean>(true)
     useEffect(() => {
-        fetch(`https://dummyjson.com/products/${params.id}`, { cache: "no-store" }).then(res => res.json()).then((data) => setData(data))
+        fetch(`https://dummyjson.com/products/${params.id}`, { cache: "no-store" }).then(res => res.json()).then((data) => {setData(data) ; setLoading(false)})
 
     }, [params.id])
     const divStyle: DivStyle = {
         backgroundImage: data.images ? `url(${data.images[0]})` : 'none'
     }
+
+    if (loading) {
+        return (
+            <>
+                <span className="loading loading-dots loading-xs"></span>
+                <span className="loading loading-dots loading-sm"></span>
+                <span className="loading loading-dots loading-md"></span>
+                <span className="loading loading-dots loading-lg"></span>
+            </>
+        )
+    } else{
     return (
         <main className="pt-20 flex flex-col bg-[#ecedf1] text-[#555555] mb-3">
             <Navigator text='#1f1717' link1='Kategori' link2='Aplikasi' link3={data.title} idLink3={data.id} />
@@ -246,6 +258,7 @@ const Page: React.FC<props> = ({ params }) => {
                 <DivProduk />
             </div>
         </main>
-    )
+    )}
 }
+
 export default Page;
